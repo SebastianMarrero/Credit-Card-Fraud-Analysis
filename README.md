@@ -65,7 +65,10 @@ Disclaimer: The variables Housing Status, Employment Status, and Payment Type ha
 
 ### KDE Plot - Numerical Features by Fraud Status
 ![KDE Plot](assets/images/kde_plot_numerical_features_class_status.png)
-- Features like `credit_risk_score` and `session_length_in_minutes` showed strong separation between fraud and non-fraud classes.
+- Features like `credit_risk_score` and `velocity_6h` showed strong separation between fraud and non-fraud classes.
+- Non-fraudulent applications tend to have a lower credit risk score than fraudulent ones.
+- Both frauduluent and non-fraudulent applications tend to have similar 6 hour, 24 hour, and 4 week velocities, in addition to similar session length and zip-count.
+  - This may seem like an innocous finding at first, however this informs us greatly about the densely clustered values among fraudulent application samples. As the data is highly skewed towards non-fraudulent applications, then intuitively the fraudulent samples' KDE peaks will inherently be lower. Therefore, for our plots that have comparable KDE peaks across fraudulent and non-fraudulent samples, the feature in question are strong indicators of fraud.
 
 ### Correlation Heatmap
 ![Correlation Heatmap](assets/images/Correlation_Heatmap.png)

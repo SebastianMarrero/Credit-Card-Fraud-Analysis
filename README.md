@@ -69,7 +69,7 @@ This project aims to build interpretable and high-recall models to detect fraudu
 - SMOTE increased recall from 1% to 77% but at the cost of a precision drop to 5%.
 
 ### Precision-Recall Curve - XGBoost
-![XGBoost PR](assets/images/Precision-Recall Curve_XGBoost.png)
+![XGBoost PR]('assets/images/Precision-Recall Curve_XGBoost.png')
 - SMOTE resulted in an unusably high false positive rate. Weighted XGBoost achieved better balance: 60% recall, 7% precision.
 
 ### Precision-Recall Curve - LightGBM

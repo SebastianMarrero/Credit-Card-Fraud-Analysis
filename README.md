@@ -132,7 +132,7 @@ Disclaimer: The variables Housing Status, Employment Status, and Payment Type ha
     - Out of all fraud applications, only 5% of predicted frauds were correct (precision), but recall jumped to 0.79, meaning we caught nearly 80% of actual fraud cases. The F1-score of 0.09 reflects a modest but real improvement in balancing fraud detection with false positives. Although the accuracy dropped to 0.82, this is a worthwhile tradeoff for the significant increase in fraud capture — a massive improvement over the SMOTE version.
 
 ##### Importantly:
-The catastrophic drop in precision caused by the introduction of the SMOTE oversampling technique is a textbook case of tree models overfitting to synthetic patterns introduced by SMOTE. Because LightGBM and XGBoost build decision splits on exact feature values, the interpolated samples from SMOTE inaccurately reflect the true structure of the data. Instead, they introduce unnatural boundaries the model vulnerably focuses on — allowing it to memorize synthetic "fraud zones" that don’t generalize, leading to massive false positive rates.
+The catastrophic drop in precision caused by the introduction of the SMOTE oversampling technique is a textbook case of tree models overfitting to synthetic patterns that SMOTE produces. Because LightGBM and XGBoost build decision splits on exact feature values, the interpolated samples from SMOTE inaccurately reflect the true structure of the data. Instead, they introduce unnatural boundaries the model vulnerably focuses on — allowing it to memorize synthetic "fraud zones" that don’t generalize, leading to massive false positive rates.
 
 ---
 

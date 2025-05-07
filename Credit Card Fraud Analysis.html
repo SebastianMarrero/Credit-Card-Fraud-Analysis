@@ -7532,7 +7532,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Setting-up-the-Data-Frame">Setting up the Data Frame<a class="anchor-link" href="#Setting-up-the-Data-Frame">¶</a></h3>
+<h3 id="Setting-up-the-Data">Setting up the Data<a class="anchor-link" href="#Setting-up-the-Data">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7805,7 +7805,7 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
 <li>Ensuring our data looks proper.</li>
-<li>Noticing some data in our prev_address_months_count contain -1, an indication of missing data. Will inspect more data to determine the missingness of our dataset</li>
+<li>Noticing some data in our prev_address_months_count contain -1, an indication of missing data. Will inspect more data to determine the missingness of our dataset.</li>
 </ul>
 </div>
 </div>
@@ -8610,7 +8610,7 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
 <li>Our prev_address_months_count column contains a significant number of -1s, indicating missing data. Other columns may contain missing data, aswell.</li>
-<li>The following code will impute NaN for our -1 values</li>
+<li>The following code will impute NaN for our -1 values.</li>
 </ul>
 </div>
 </div>
@@ -8886,7 +8886,7 @@ dtype: int64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Basic-EDA-and-Visualizations">Basic EDA and Visualizations<a class="anchor-link" href="#Basic-EDA-and-Visualizations">¶</a></h3><hr/>
+<h2 id="Basic-EDA-and-Visualizations">Basic EDA and Visualizations<a class="anchor-link" href="#Basic-EDA-and-Visualizations">¶</a></h2><hr/>
 </div>
 </div>
 </div>
@@ -8912,7 +8912,7 @@ dtype: int64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Class-Distribution">Class Distribution<a class="anchor-link" href="#Class-Distribution">¶</a></h4>
+<h3 id="Class-Distribution">Class Distribution<a class="anchor-link" href="#Class-Distribution">¶</a></h3>
 </div>
 </div>
 </div>
@@ -8953,7 +8953,7 @@ dtype: int64</pre>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/var/folders/yw/pqk5wsp91vlcbh2lpn3gp63w0000gn/T/ipykernel_89321/1487930869.py:5: FutureWarning: 
+<pre>/var/folders/yw/pqk5wsp91vlcbh2lpn3gp63w0000gn/T/ipykernel_86313/1487930869.py:5: FutureWarning: 
 
 Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
 
@@ -9355,10 +9355,10 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h4 id="Our-main-takeaways-from-our-log-scale-histograms-illustrating-categorical-feature-distribution-across-class-status:">Our main takeaways from our log-scale histograms illustrating categorical feature distribution across class status:<a class="anchor-link" href="#Our-main-takeaways-from-our-log-scale-histograms-illustrating-categorical-feature-distribution-across-class-status:">¶</a></h4><p>Disclaimer: The variables Housing Status, Employment Status, and Payment Type have been anonymized to preserve customer privacy. Although their categorical labels do not reflect real-world semantics, they retain predictive value and may still indicate patterns associated with fraudulent credit card applications.</p>
 <ul>
-<li>Fraud is prevalent on Windows operating system compared to other OS'</li>
-<li>Fraud counts are noticeably higher for BA and BB compared to other housing status</li>
+<li>Fraud is prevalent on Windows operating system compared to other OS'.</li>
+<li>Fraud counts are noticeably higher for BA and BB compared to other housing status.</li>
 <li>Fraud is especially rare in BG, BF, BD, even though these have decent non-fraud counts.</li>
-<li>CA employment status has an unusually high number of frauds</li>
+<li>CA employment status has an unusually high number of frauds.</li>
 <li>AB and AC payment type both show strong fraud representation relative to their non-fraud base.</li>
 <li>AE payment type has almost no fraud presence despite having many non-fraud cases.</li>
 </ul>
@@ -9412,7 +9412,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 <li>A few features, such as velocity_6h, velocity_24h, and intended_balcon_amount, indicate moderate positive correlation with fraud, suggesting potential relevance for predictive modeling.</li>
 <li>date_of_birth_distinct_emails_4w appears to have a moderate negative correlation with fraud_bool, potentially indicating inverse risk signals.</li>
 <li>Features like device_fraud_count and device_distinct_emails_8w, while intuitively important, show minimal linear correlation, which may imply nonlinear relationships better captured by tree-based models.</li>
-<li>Overall, this heatmap reinforces our need to go beyond linear correlation and apply additional methods to assess predictive value</li>
+<li>Overall, this heatmap reinforces our need to go beyond linear correlation and apply additional methods to assess predictive value.</li>
 </ul>
 <hr/>
 </div>
@@ -9425,9 +9425,9 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Scaling-and-Modeling">Scaling and Modeling<a class="anchor-link" href="#Scaling-and-Modeling">¶</a></h3><ul>
+<h2 id="Scaling-and-Modeling">Scaling and Modeling<a class="anchor-link" href="#Scaling-and-Modeling">¶</a></h2><ul>
 <li>Our data is highly imbalanced, with only 1% of the data containing the fraud class.</li>
-<li>Our modeling analysis will consist of a comparison between XGBoost / LightGBM and Logistic Regression, additionally incorporating Oversampling techniques and meta-modeling techniques such as SMOTE/ADASYN and Ensembles &amp; Stacking to enrich the comparitive analysis and the ensuing predictive outcomes</li>
+<li>Our modeling analysis will consist of a comparison between XGBoost / LightGBM and Logistic Regression, additionally incorporating Oversampling techniques and meta-modeling techniques such as SMOTE/ADASYN and Ensembles &amp; Stacking to enrich the comparitive analysis and the ensuing predictive outcomes.</li>
 </ul>
 </div>
 </div>
@@ -10098,19 +10098,19 @@ weighted avg       0.99      0.82      0.89    200000
 <h4 id="Let's-discuss-the-results-here:">Let's discuss the results here:<a class="anchor-link" href="#Let's-discuss-the-results-here:">¶</a></h4><hr/>
 <p>Our Logistic Regression with Original Training data:</p>
 <ul>
-<li>Correctly identified almost all non-fraud applications</li>
-<li>Only misclassified 17 applications as frauds</li>
-<li>mistook 2176 frauds for regular applications</li>
-<li>Only predicted 30 fraudulent applications</li>
+<li>Correctly identified almost all non-fraud applications.</li>
+<li>Only misclassified 17 applications as frauds.</li>
+<li>mistook 2176 frauds for regular applications.</li>
+<li>Only predicted 30 fraudulent applications.</li>
 </ul>
 <p>Out of all fraud applications, 64% of the predictions were correct (recall, only 30 applications). Recall is at an abysmal 0.01, meaning we caught only 1% of fraudulent applications. F-1 score indicates a terrible balance of precision and recall ~ 0.03. Overall accuracy, at 0.99, is misleading since our data is inherently significantly skewed.</p>
 <hr/>
 <p>Our Logistic Regression with SMOTE-altered Training data:</p>
 <ul>
-<li>Correctly identified less non-fraudulent applications than our LR with original, non-SMOTE data</li>
-<li>Missed 514 fraudulent applications</li>
-<li>Predicted over 1692 fraudulent applications, a huge step-up from our original training data</li>
-<li>Predicted fraud for 35219 non-fraudulent applications</li>
+<li>Correctly identified less non-fraudulent applications than our LR with original, non-SMOTE data.</li>
+<li>Missed 514 fraudulent applications.</li>
+<li>Predicted over 1692 fraudulent applications, a huge step-up from our original training data.</li>
+<li>Predicted fraud for 35219 non-fraudulent applications.</li>
 </ul>
 <p>Out of all fraud applications, 5% of the predictions were correct (recall, 1692 applications). Recall is at a much improved 0.77, meaning we caught up to 77% of fraudulent applications. F-1 score indicates a subpar balance of precision and recall ~ 0.09. Overall accuracy, at 0.82, is underwhelming and worse-off than our logistic regression completed with non-SMOTE training data. Our Smote data allowed our model to catch much more fraudulent transactions, however its casting a much, much wider net, resulting in false positives.</p>
 <hr/>
@@ -10192,7 +10192,7 @@ weighted avg       0.99      0.82      0.89    200000
 </ul>
 <p>The overall shape of the curves validates the classification reports: the original model is conservative and precise, while the SMOTE model is more aggressive in catching fraud but generates many false alarms In general, SMOTE improves fraud detection recall, but significantly worsens precision — meaning your model is better at catching frauds, but triggers a lot of false alarms in the process.</p>
 <hr/>
-<h2 id="Extreme-Gradient-Boosting-(XGBoost)-analysis">Extreme Gradient Boosting (XGBoost) analysis<a class="anchor-link" href="#Extreme-Gradient-Boosting-(XGBoost)-analysis">¶</a></h2><h5 id="XGBoost-and-LightGBM-are-two-of-the-most-powerful-models-for-tabular-classification-for-data-like-this-one">XGBoost and LightGBM are two of the most powerful models for tabular classification for data like this one<a class="anchor-link" href="#XGBoost-and-LightGBM-are-two-of-the-most-powerful-models-for-tabular-classification-for-data-like-this-one">¶</a></h5>
+<h2 id="Extreme-Gradient-Boosting-(XGBoost)-analysis">Extreme Gradient Boosting (XGBoost) analysis<a class="anchor-link" href="#Extreme-Gradient-Boosting-(XGBoost)-analysis">¶</a></h2><h5 id="XGBoost-and-LightGBM-are-two-of-the-most-powerful-models-for-tabular-credit-card-fraud-data">XGBoost and LightGBM are two of the most powerful models for tabular credit card fraud data<a class="anchor-link" href="#XGBoost-and-LightGBM-are-two-of-the-most-powerful-models-for-tabular-credit-card-fraud-data">¶</a></h5>
 </div>
 </div>
 </div>
@@ -10276,17 +10276,11 @@ weighted avg       0.99      0.82      0.89    200000
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/Users/smarr/.pyenv/versions/3.13.2/lib/python3.13/site-packages/xgboost/training.py:183: UserWarning: [23:41:28] WARNING: /Users/runner/work/xgboost/xgboost/src/learner.cc:738: 
+<pre>/Users/smarr/.pyenv/versions/3.13.2/lib/python3.13/site-packages/xgboost/training.py:183: UserWarning: [21:24:48] WARNING: /Users/runner/work/xgboost/xgboost/src/learner.cc:738: 
 Parameters: { "Use_label_encoder" } are not used.
 
   bst.update(dtrain, iteration=i, fobj=obj)
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/Users/smarr/.pyenv/versions/3.13.2/lib/python3.13/site-packages/xgboost/training.py:183: UserWarning: [23:41:30] WARNING: /Users/runner/work/xgboost/xgboost/src/learner.cc:738: 
+/Users/smarr/.pyenv/versions/3.13.2/lib/python3.13/site-packages/xgboost/training.py:183: UserWarning: [21:24:50] WARNING: /Users/runner/work/xgboost/xgboost/src/learner.cc:738: 
 Parameters: { "Use_label_encoder" } are not used.
 
   bst.update(dtrain, iteration=i, fobj=obj)
@@ -10940,21 +10934,15 @@ weighted avg       0.99      0.35      0.50    200000
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>[LightGBM] [Info] Number of positive: 8823, number of negative: 791177
-[LightGBM] [Info] Auto-choosing row-wise multi-threading, the overhead of testing was 0.022393 seconds.
+[LightGBM] [Info] Auto-choosing row-wise multi-threading, the overhead of testing was 0.029282 seconds.
 You can set `force_row_wise=true` to remove the overhead.
 And if memory is not enough, you can set `force_col_wise=true`.
 [LightGBM] [Info] Total Bins 3220
 [LightGBM] [Info] Number of data points in the train set: 800000, number of used features: 30
 [LightGBM] [Info] [binary:BoostFromScore]: pavg=0.011029 -&gt; initscore=-4.496160
 [LightGBM] [Info] Start training from score -4.496160
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>[LightGBM] [Info] Number of positive: 791177, number of negative: 791177
-[LightGBM] [Info] Auto-choosing row-wise multi-threading, the overhead of testing was 0.040200 seconds.
+[LightGBM] [Info] Number of positive: 791177, number of negative: 791177
+[LightGBM] [Info] Auto-choosing row-wise multi-threading, the overhead of testing was 0.034384 seconds.
 You can set `force_row_wise=true` to remove the overhead.
 And if memory is not enough, you can set `force_col_wise=true`.
 [LightGBM] [Info] Total Bins 5754
@@ -11458,19 +11446,19 @@ weighted avg       0.99      0.01      0.00    200000
 <h4 id="Let's-discuss-the-results-here:">Let's discuss the results here:<a class="anchor-link" href="#Let's-discuss-the-results-here:">¶</a></h4><hr/>
 <p>Our LightGBM with Original Training Data:</p>
 <ul>
-<li>Correctly identified 197,654 non-fraudulent applications</li>
-<li>Misclassified 140 legitimate transactions as fraud</li>
-<li>Missed 2,103 fraudulent applications-</li>
-<li>Successfully predicted 103 cases of fraud</li>
+<li>Correctly identified 197,654 non-fraudulent applications.</li>
+<li>Misclassified 140 legitimate transactions as fraud.</li>
+<li>Missed 2,103 fraudulent applications.</li>
+<li>Successfully predicted 103 cases of fraud.</li>
 </ul>
 <p>Out of all fraud applications, 42% of the fraud predictions were correct, with a recall of 0.05, meaning we caught only 5% of actual frauds. The F1-score of 0.08 reflects a weak balance between precision and recall. While the overall accuracy is 0.99, this is misleading, as it simply reflects the model’s strong performance on the dominant non-fraud class.</p>
 <hr/>
 <p>Our LightGBM with SMOTE-altered, Balanced Training Data:</p>
 <ul>
-<li>Correctly flagged 2,192 out of 2,206 fraud cases — an almost perfect recall of 0.99</li>
-<li>But misclassified a staggering 192,691 legitimate applications as fraud</li>
-<li>Only 5,103 non-fraud transactions were correctly labeled</li>
-<li>Precision for fraud fell to 0.01, meaning the vast majority of predicted frauds were false positives</li>
+<li>Correctly flagged 2,192 out of 2,206 fraud cases — an almost perfect recall of 0.99.</li>
+<li>But misclassified a staggering 192,691 legitimate applications as fraud.</li>
+<li>Only 5,103 non-fraud transactions were correctly labeled.</li>
+<li>Precision for fraud fell to 0.01, meaning the vast majority of predicted frauds were false positives.</li>
 <li>Despite its ability to detect nearly every fraud case, the model’s overall accuracy collapsed to 0.04, making it unusable in practice. The F1-score (0.02) shows that the model performs terribly in balancing fraud detection and false alarms.</li>
 </ul>
 <h3 id="Importantly:">Importantly:<a class="anchor-link" href="#Importantly:">¶</a></h3><p>This catastrophic drop in precision is a textbook case of tree models overfitting to synthetic patterns introduced by SMOTE. Because LightGBM and XGBoost build decision splits on exact feature values, the interpolated samples from SMOTE inaccurately reflect the true structure of the data. Instead, they introduce unnatural boundaries the model vulnerably focuses on — allowing it to memorize synthetic "fraud zones" that don’t generalize, leading to massive false positive rates.</p>
@@ -11545,7 +11533,7 @@ weighted avg       0.99      0.01      0.00    200000
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [33]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">## the following code will estimate the relative weight of fraud cases compared to non-fraud casesin our data set</span>
@@ -11562,7 +11550,7 @@ weighted avg       0.99      0.01      0.00    200000
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [35]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">## The following code will re-run our XGBoost and LightGBM models, however we will disregard the SMOTE data and implement the scale_pos_weight parameter</span>
@@ -11597,7 +11585,7 @@ weighted avg       0.99      0.01      0.00    200000
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/Users/smarr/.pyenv/versions/3.13.2/lib/python3.13/site-packages/xgboost/training.py:183: UserWarning: [23:41:41] WARNING: /Users/runner/work/xgboost/xgboost/src/learner.cc:738: 
+<pre>/Users/smarr/.pyenv/versions/3.13.2/lib/python3.13/site-packages/xgboost/training.py:183: UserWarning: [22:38:44] WARNING: /Users/runner/work/xgboost/xgboost/src/learner.cc:738: 
 Parameters: { "Use_label_encoder" } are not used.
 
   bst.update(dtrain, iteration=i, fobj=obj)
@@ -11619,27 +11607,15 @@ Parameters: { "Use_label_encoder" } are not used.
    macro avg       0.53      0.75      0.53    200000
 weighted avg       0.98      0.90      0.94    200000
 
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>[LightGBM] [Info] Number of positive: 8823, number of negative: 791177
-[LightGBM] [Info] Auto-choosing row-wise multi-threading, the overhead of testing was 0.023626 seconds.
+[LightGBM] [Info] Number of positive: 8823, number of negative: 791177
+[LightGBM] [Info] Auto-choosing row-wise multi-threading, the overhead of testing was 0.019828 seconds.
 You can set `force_row_wise=true` to remove the overhead.
 And if memory is not enough, you can set `force_col_wise=true`.
 [LightGBM] [Info] Total Bins 3220
 [LightGBM] [Info] Number of data points in the train set: 800000, number of used features: 30
 [LightGBM] [Info] [binary:BoostFromScore]: pavg=0.011029 -&gt; initscore=-4.496160
 [LightGBM] [Info] Start training from score -4.496160
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>LightGBM -  scale_pos_weight
+LightGBM -  scale_pos_weight
 [[163218  34576]
  [   467   1739]]
               precision    recall  f1-score   support
@@ -11661,7 +11637,7 @@ weighted avg       0.99      0.82      0.89    200000
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [32]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [36]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">Weighted_PR_Curve</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_scores</span><span class="p">,</span> <span class="n">label</span><span class="p">):</span>
@@ -11713,23 +11689,33 @@ weighted avg       0.99      0.82      0.89    200000
 <hr/>
 <p>Weighted LightGBM:</p>
 <ul>
-<li>Correctly identified 163,218 non-fraudulent applications</li>
-<li>Misclassified 34,576 legitimate transactions as fraud</li>
-<li>Missed 467 fraudulent applications</li>
-<li>Successfully predicted 1,739 fraud cases</li>
+<li>Correctly identified 163,218 non-fraudulent applications.</li>
+<li>Misclassified 34,576 legitimate transactions as fraud.</li>
+<li>Missed 467 fraudulent applications.</li>
+<li>Successfully predicted 1,739 fraud cases.</li>
 </ul>
 <p>Out of all fraud applications, only 5% of predicted frauds were correct (precision), but recall jumped to 0.79, meaning we caught nearly 80% of actual fraud cases. The F1-score of 0.09 reflects a modest but real improvement in balancing fraud detection with false positives. Although the accuracy dropped to 0.82, this is a worthwhile tradeoff for the significant increase in fraud capture —  a massive improvement over the SMOTE version.</p>
 <hr/>
 <p>Weighted XGBoost:</p>
 <ul>
-<li>Correctly identified 179,305 non-fraudulent applications</li>
-<li>Misclassified 18,489 legitimate transactions as fraud</li>
-<li>Missed 882 fraud cases</li>
-<li>Correctly flagged 1,324 fraudulent applications</li>
+<li>Correctly identified 179,305 non-fraudulent applications.</li>
+<li>Misclassified 18,489 legitimate transactions as fraud.</li>
+<li>Missed 882 fraud cases.</li>
+<li>Correctly flagged 1,324 fraudulent applications.</li>
 </ul>
 <p>Here, precision on fraud predictions improved to 7%, and recall rose to 0.60, meaning 60% of fraud was successfully identified — a major step up from the original XGBoost performance. With an F1-score of 0.12 and accuracy of 0.90, this version of XGBoost strikes a better balance, delivering strong fraud recall without the excessive false alarms seen in the SMOTE model.</p>
 <hr/>
-<h1 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">¶</a></h1><p>This analysis demonstrates that using tree-based classifiers with scale_pos_weight delivers the most effective fraud detection results. While SMOTE drastically inflated false positives, and logistic regression underperformed on recall, models like LightGBM and XGBoost — when properly weighted — achieved a much stronger balance of fraud detection and operational feasibility</p>
+<h1 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">¶</a></h1><h3 id="To-recap">To recap<a class="anchor-link" href="#To-recap">¶</a></h3><h4 id="Data-Prep">Data Prep<a class="anchor-link" href="#Data-Prep">¶</a></h4><ul>
+<li>Handled null values in key features such as bank_months_count, credit_risk_score, and session_length_in_minutes.</li>
+<li>Encoded categorical variables and applied StandardScaler to numerical features.</li>
+<li>Labeled target variable fraud_bool for binary classification.</li>
+</ul>
+<h4 id="EDA-and-modeling-insights">EDA and modeling insights<a class="anchor-link" href="#EDA-and-modeling-insights">¶</a></h4><ul>
+<li>Fraudulent applications indicated increases in velocity_6h and velocity_4w — demonstrating rapid application behavior.</li>
+<li>Boxplots revealed fraud is more common among applicants with shorter account histories (bank_months_count) and fewer distinct emails (device_distinct_emails_8w).</li>
+<li>KDE plots show distinct separation in feature distributions between fraud and non-fraud, especially for credit_risk_score, payment_type, and housing_status.</li>
+</ul>
+<h3 id="Bottom-line">Bottom-line<a class="anchor-link" href="#Bottom-line">¶</a></h3><p>This analysis demonstrates that using tree-based classifiers with scale_pos_weight delivers the most effective fraud detection results. While SMOTE drastically inflated false positives, and logistic regression underperformed on recall, models like LightGBM and XGBoost — when properly weighted — achieved a much stronger balance of fraud detection and operational feasibility.</p>
 <ul>
 <li><p>LightGBM with scale_pos_weight achieved the highest PR AUC (0.162) and captured nearly 80% of fraud cases.</p>
 </li>

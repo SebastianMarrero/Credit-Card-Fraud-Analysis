@@ -115,7 +115,7 @@ This project aims to build interpretable and high-recall models to detect fraudu
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/SebastianMarrero/Bank-Account-Fraud-Analysis.git
+git clone https://github.com/SebastianMarrero/Credit-Card-Fraud-Analysis.git
 ```
 2. Open the notebook `Credit Card Fraud Analysis.ipynb` in Jupyter Lab or VS Code  
 3. Run the notebook cells sequentially  

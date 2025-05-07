@@ -1,7 +1,7 @@
 
 # Credit Card Fraud Detection Analysis
 
-Comprehensive classification analysis using the Feedzai BAF synthetic credit card fraud dataset. This project evaluates techniques for detecting fraud in highly imbalanced financial data using Logistic Regression, XGBoost, and LightGBM models. Class balancing strategies like SMOTE and `scale_pos_weight` are tested for impact on model performance, supported by exploratory data analysis and visualization. Key performance metrics such as the Precision-Recall Curve, direct model comparisons using Precision, Recall, and F1 scores, and recommendations are included to inform fraud mitigation strategies.
+Comprehensive classification analysis using the Feedzai BAF synthetic credit card fraud dataset. This project evaluates techniques for detecting fraud in highly imbalanced financial data using Logistic Regression, XGBoost, and LightGBM models, and is supported by an exploratory data analysis and visualization of the dataset's features. Class balancing strategies like Synthetic Minority Oversampling Technique (SMOTE) and `scale_pos_weight` are tested for impact on model performance. Key performance metrics such as the Precision-Recall Curve, and direct model comparisons using Precision, Recall, and F1 scores are included to inform the most effective modeling techniques for identifying fraud in credit card application data.
 
 ---
 
@@ -24,7 +24,7 @@ This project aims to build interpretable and high-recall models to detect fraudu
 
 ## Tech Stack
 
-- **Python** (Pandas, Scikit-learn, XGBoost, LightGBM, Seaborn, Matplotlib, Imbalanced-learn)
+- **Python** (Pandas, Scikit-learn, Logistic Regression, XGBoost, LightGBM, Seaborn, Matplotlib, Synthetic Minority Oversampling Technique, Imbalanced-learn)
 - **Jupyter Notebook** (EDA, Modeling, Visualization)
 - **GitHub Pages + Jekyll** (Project portfolio publishing)
 
@@ -43,7 +43,7 @@ This project aims to build interpretable and high-recall models to detect fraudu
 ### Fraud Class Distribution
 ![Fraud Class Distribution](assets/images/FraudClassDistribution.png)
 - Fraudulent applications represent only **1.1%** of all cases, illustrating extreme class imbalance and the need for advanced resampling or weighting strategies.
-- Classification models like XGBoost or LightGBM could be excellent methods for accurately predicting fraud incidence in our data.
+- Classification models like XGBoost or LightGBM could be excellent methods for accurately predicting fraud in our data.
 
 ### Categorical Features (Log Scale by Fraud Status)
 Disclaimer: The variables Housing Status, Employment Status, and Payment Type have been anonymized to preserve customer privacy. Although their categorical labels do not reflect real-world semantics, they retain predictive value and may still indicate patterns associated with fraudulent credit card applications.
@@ -51,60 +51,63 @@ Disclaimer: The variables Housing Status, Employment Status, and Payment Type ha
 ![Device OS](assets/images/Categorical_feature_distribution_by_device_os.png)  
   - Fraud is prevalent on Windows operating system compared to other OS'.
 ![Employment Status](assets/images/Categorical_feature_distribution_by_employment_status.png)  
-  - CA employment status has an unusually high number of frauds.
+  - CA employment status has an unusually high number of frauds relative to the other housing status categorires, however it also contains the largest quantity of non-fraudulent applications, indicating a generalized prevalence of data.
+  - No single employment status category shows significant differences in non-fraudulent applications and fraudulent applications. 
 ![Housing Status](assets/images/Categorical_feature_distribution_by_housing_status.png)  
-  - Fraud counts are noticeably higher for BA and BB compared to other housing status.
-  - Fraud is especially rare in BG, BF, BD, even though these have decent non-fraud counts.
+  - Fraud counts are noticeably higher for BA, BB, and BC compared to other housing statuses.
+  - Fraud is especially rare in BG and BF even though these have decent non-fraud counts.
 ![Payment Type](assets/images/Categorical_feature_distribution_by_payment_type.png)  
-  - AB and AC payment type both show strong fraud representation relative to their non-fraud base.
-  - AE payment type has almost no fraud presence despite having many non-fraud cases.
-
+  - AA, AB, AC, and AC payment types all show strong fraud representation relative to their non-fraud base.
+  - AE payment type is an outlier category in that it has an infinitesimal fraud presence despite having a substantial number of non-fraud cases.
 ![Source](assets/images/Categorical_feature_distribution_by_source.png)  
-  - Fraud via Internet source has significantly greater quantity of both fraud and non-fraud cases relative to Teleapp
-  - Deductions involving fraud prevalence by source cannot be confidently made, however it can be assumed through this data that the majority of both fraudulent and non-fraudulent applications occur via  the internet.
+  - Fraud via Internet source has a greater number of both fraud and non-fraud cases relative to Teleapp.
+  - conclusions with respect to patterns in fraud prevalence by source cannot be confidently made, however it can be assumed that the majority of both fraudulent and non-fraudulent applications occur via  the internet.
 
 ### KDE Plot - Numerical Features by Fraud Status
 ![KDE Plot](assets/images/kde_plot_numerical_features_class_status.png)
 - Features like `credit_risk_score` and `velocity_6h` showed strong separation between fraud and non-fraud classes.
 - Non-fraudulent applications tend to have a lower credit risk score than fraudulent ones.
 - Both frauduluent and non-fraudulent applications tend to have similar 6 hour, 24 hour, and 4 week velocities, in addition to similar session length and zip-count.
-  - This may seem like an innocous finding at first, however this informs us greatly about the densely clustered values among fraudulent application samples. As the data is highly skewed towards non-fraudulent applications, then intuitively the fraudulent samples' KDE peaks will inherently be lower. Therefore, for our plots that have comparable KDE peaks across fraudulent and non-fraudulent samples, the feature in question are strong indicators of fraud.
+  - This may seem like an innocous finding at first, however this informs us greatly about the densely clustered values among fraudulent application samples.
+  - As the data is highly skewed towards non-fraudulent applications, then, intuitively, the fraudulent samples' KDE peaks will inherently be lower. Therefore, for our plots that have comparable KDE peaks across fraudulent and non-fraudulent samples, the features in question are strong indicators of fraud.
+ 
+  - In conclusion, our KDE Plot series demonstrates that variables like `credit_risk_score`, `velocity_6h`, `velocity_24h`, `session_length_in_minutes`, and `zip_count_4w` could be strong indicators of fraud in a credit card application.
 
 ### Correlation Heatmap
 ![Correlation Heatmap](assets/images/Correlation_Heatmap.png)
 - Most of the features show weak or near-zero correlation with fraud_bool, indicating limited linear association with fraud occurrence.
-- A few features, such as velocity_6h, velocity_24h, and intended_balcon_amount, indicate moderate positive correlation with fraud, suggesting potential relevance for predictive modeling.
+- A few features, such as `velocity_6h`, `velocity_24h`, `proposed_credit_limit`, and `credit_risk_score`, indicate moderate positive correlation with fraud, suggesting potential for successful predictive modeling.
 - Overall, this heatmap reinforces our need to go beyond linear correlation and apply additional methods to assess predictive value.
 
 ### Precision-Recall Curve - Logistic Regression
 ![Logistic PR](assets/images/Precision-Recall_Curve_LR.png)
-- SMOTE increased recall from 1% to 77% but at the cost of a precision drop to 5% (17 false positives compared to 35,219).
-- The introduction of the SMOTE oversampling technique resulted in our Logistic Regression casting an aggressively wide net around our data and misclassifying a significant proportion of non-fraudulent applications as fraudulent.
+- Introducing the SMOTE-balanced data into our logistic regression increased recall from 1% to 77% but at the cost of a precision drop to 5% (17 false positives compared to 35,219).
+    - Resulted in our Logistic Regression casting an aggressively wide net around our data and misclassifying a significant proportion of non-fraudulent applications as fraudulent.
 - Both curves drop quickly as recall increases, showing that the models struggle to maintain precision when trying to identify more fraud cases.
 
 ### Precision-Recall Curve - XGBoost
 ![XGBoost PR](assets/images/Precision-Recall_Curve_XGBoost.png)
-- SMOTE resulted in an unusably high false positive rate, demonstrated by the noticeably abysmal recall rate in our orange curve.
-- Model ran on SMOTE-altered data indicates extremely high sensitivity to fraud, classifying 130,066 non-fraudulent applications as fraudulent.
+- Introducing the SMOTE-balanced data results in an unusably high false positive rate, demonstrated by the noticeably abysmal recall rate in our orange curve.
+    - Model indicates extremely high sensitivity to fraud, classifying 130,066 non-fraudulent applications as fraudulent.
 - Model trained on the original data performs significantly better than XGBoost trained on SMOTE-altered data — it maintains a better balance between catching fraud and not overwhelming the system with false positives.
 - The original model is more conservative, yet far more trustworthy and usable for fraud detection in real-world applications.
 
-#### Why does SMOTE hurt our XGBoost model?
-- Synthetic points, as in the case of our oversampling technique in SMOTE, adds a lot of "noise" in the form of newly generated fraud samples, which can mislead the tree growth process.
-- Our XGBoost model is incredibly vulnerable to synthetic patterns generated by SMOTE due to it being a high-capacity learner - these patterns don't generalize uniformly to the rest of the data, leading to a precipitous drop in precision score.
-
 ### Precision-Recall Curve - LightGBM
 ![LightGBM PR](assets/images/LightGBM_PR_Curve.png)
-- Our LightGBM model with SMOTE applied decimatea our fraud recall estimates. It's precision hovers near zero across all recall levels, meaning that almost all fraud predictions are false alarms.
-- Weighted LightGBM delivered the most balanced output. Precision steadily declines with increasing recall, which is expected. The model is cautious, but when it flags fraud, it's relatively accurate early on.
-
+- Our LightGBM model with SMOTE-balanced data decimates our fraud recall estimates. Its precision hovers near zero across all recall levels, meaning that almost all non-fraud predictions are classified as false alarms.
+- Despite low recall (0.05), our model trained on imbalanced data retains semblance of predictive value — it makes some smart decisions in identifying true fraud by identifying slightly less than half fraudulent applications (0.41).
+- 
 ### Precision-Recall Curve - Weighted LightGBM vs XGBoost
 ![Weighted PR](assets/images/Weighted_PR_Curve.png)
 - **LightGBM with `scale_pos_weight`** achieved the highest overall PR AUC (0.162) with strong recall (0.79), outperforming all other models.
-- Both models massively outperform their SMOTE counterparts, proving that scale_pos_weight is the superior approach for decision trees.
-- Our LightGBM model correctly identifies 163,218 non-fraudulent applications and only misclassifies 34,576 legitimate applications as fraud, a drastic improvement from the 197,411  legitimate applications misclassified as fraud in our SMOTE-altered data.
-- Our XGboost model received a significant tune-up in performance, although not quite as good as our LightGBM model, demonstrated clearly in the consistently lower precision rates over the recall range.
-- Our XGboost model correctly identifies 179,305 non-fraudulent applications and only misclassifies 1,324 legitimate applications as fraud, also a drastic improvement from the 130,066 legitimate applications misclassified as fraud in our SMOTE-altered data.
+- Both models massively outperform their SMOTE counterparts, proving that scale_pos_weight is the superior approach for calibrating highly imbalanced data for our decision trees models.
+  - Our LightGBM model correctly identifies 163,218 non-fraudulent applications and only misclassifies 34,576 legitimate applications as fraud, a drastic improvement from the 197,411  legitimate applications misclassified as fraud in our SMOTE-altered data.
+  - Our XGboost model received a significant tune-up in performance, although not quite as good as our LightGBM model, demonstrated clearly in the consistently lower precision rates over the recall range.
+  - Our XGboost model correctly identifies 179,305 non-fraudulent applications and only misclassifies 1,324 legitimate applications as fraud, also a drastic improvement from the 130,066 legitimate applications misclassified as fraud in our SMOTE-altered data.
+
+#### Why does SMOTE hurt our XGBoost and LightGBM models?
+- Synthetic points, as in the case of our oversampling technique in SMOTE, adds a lot of "noise" in the form of newly generated fraud samples, which can mislead the "tree growth" process in our "decision tree"-based predictive models.
+- Our XGBoost and LightGBM models are incredibly vulnerable to synthetic patterns generated by SMOTE due to it being a high-capacity learner - these patterns don't generalize uniformly to the rest of the data, leading to a precipitous drop in precision score.
 
 ---
 
@@ -114,7 +117,8 @@ Disclaimer: The variables Housing Status, Employment Status, and Payment Type ha
 - **Original:** Recall 0.01, Precision 0.64, F1 0.03
     - Out of all fraud applications, 64% of the predictions were correct (recall, only 30 applications). Recall is at an abysmal 0.01, meaning we caught only 1% of fraudulent applications. F-1 score indicates a terrible balance of precision and recall ~ 0.03. Overall accuracy, at 0.99, is misleading since our data is inherently significantly skewed.
 - **SMOTE:** Recall 0.77, Precision 0.05, F1 0.09
-    - Out of all fraud applications, 5% of the predictions were correct (recall, 1692 applications). Recall is at a much improved 0.77, meaning we caught up to 77% of fraudulent applications. F-1 score indicates a subpar balance of precision and recall ~ 0.09. Overall accuracy, at 0.82, is underwhelming and worse-off than our logistic regression completed with non-SMOTE training data. Our Smote data allowed our model to catch much more fraudulent transactions, however its casting a much, much wider net, resulting in false positives.
+    - Out of all fraud applications, 5% of the predictions were correct (recall, 1692 applications). Recall is at a much improved 0.77, meaning we caught up to 77% of fraudulent applications. F-1 score indicates a subpar balance of precision and recall ~ 0.09. Overall accuracy, at 0.82, is underwhelming and worse-off than our logistic regression completed with non-SMOTE training data.
+    - Our Smote data allowed our model to catch much more fraudulent transactions, however its casting a much, much wider net, resulting in false positives.
       
 ### XGBoost
 - **Original:** Recall 0.03, Precision 0.41, F1 0.06

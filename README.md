@@ -76,7 +76,7 @@ Disclaimer: The variables Housing Status, Employment Status, and Payment Type ha
 ### Correlation Heatmap
 ![Correlation Heatmap](assets/images/Correlation_Heatmap.png)
 - Most of the features show weak or near-zero correlation with fraud_bool, indicating limited linear association with fraud occurrence.
-- A few features, such as `velocity_6h`, `velocity_24h`, `proposed_credit_limit`, and `credit_risk_score`, indicate moderate positive correlation with fraud, suggesting potential for successful predictive modeling.
+- A few features, such as `velocity_6h`, `velocity_24h`, `proposed_credit_limit`, and `credit_risk_score` indicate moderate positive correlation with fraud, suggesting potential for successful predictive modeling.
 - Overall, this heatmap reinforces our need to go beyond linear correlation and apply additional methods to assess predictive value.
 
 ### Precision-Recall Curve - Logistic Regression
